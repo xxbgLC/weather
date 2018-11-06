@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<view class="container">
+<view style='font-size: 25rpx;'>更新于：{{updateTime}}</view>
+  <view class='city'>{{city}}<text style='font-size: 50rpx;margin-left: 20rpx;'>{{location}}</text></view>
+  <view class='now'>
+    <view class='now_tmp'>
+      <text class='' style='font-size:150rpx;'>{{nowWeather.tmp}}℃</text><text></text>
+    </view>
+    <view class='now_airQlty'>
+      <text>空气质量：{{airQuality.qlty}}</text>
+      <text>空气质量数：{{airQuality.aqi}}</text>
+      <text>主要污染物：{{airQuality.main}}</text>
+    </view>
+  </view>
+  
+  <view class='today'>
+    <view class='today_weather' wx:for='{{wertherObj.key}}' wx:key='{{index}}'>
+      <view>{{wertherObj.val[item]}}</view>
+      <view>{{nowWeather[item]}}</view>
+    </view>
+  </view>
+  <view class='hWeather'>
+    <view class='hWeather_hour' wx:for="{{hourlyWeather}}" wx:key="{{index}}">
+      <text>{{item.time}}</text>
+      <text class='hWeather_hour_tmp'>{{item.tmp}}℃</text>
+      <text>{{item.cond_text}}</text>
+      <image src='../../images/{{item.cond_code}}.png'></image>
+      <text class='hWeather_hour_pop'>降雨概率：{{item.pop}}%</text>
+    </view>
+  </view>
+  <view class='fWeather'>
+    <view class='fWeather_aDay'>
+      <view class='item' wx:for='{{day7Weather}}' wx:key='{{index}}'>
+        <view class='date paddingB'>{{item.date}}</view>
+        <view class='paddingB'>{{item.tmp_max}}~{{item.tmp_min}}℃</view>
+        <view class='paddingB'>
+          <text>{{item.cond_txt_d}}</text>
+          <image mode='widthFix' src='../../images/{{item.cond_code_d}}.png'></image>
+        </view>
+        <view class='paddingB'>{{item.wind_dir}}{{item.wind_sc}}级</view>
+      </view>
+    </view>
+  </view>
+  <view class='life'>
+    <view class='life_style' wx:for='{{lifeStyle}}' data-brf="{{item.brf}}" data-text='{{item.txt}}' wx:key='{{index}}' bindtap='showLifeStyle'>
+      <view class='life_icon'>{{item.type_text}}<image src='../../images/{{item.type}}.png'></image></view>
+      <view>{{item.brf}}</view>
+    </view>
+  </view>
+  <view class='copyright'>@xxbg 2018 版权所有</view>
+</view>

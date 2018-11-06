@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/selectCity/selectCity"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#08C4F5",
+    "navigationBarTitleText": "和风天气预报",
+    "navigationBarTextStyle": "#fff",
+    "backgroundColor": "#08C4F5",
+    "enablePullDownRefresh": true
+  }
+}
