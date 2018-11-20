@@ -42,7 +42,8 @@
     </view>
   </view>
   <view class='life'>
-    <view class='life_style' wx:for='{{lifeStyle}}' data-brf="{{item.brf}}" data-text='{{item.txt}}' wx:key='{{index}}' bindtap='showLifeStyle'>
+    <view class='life_style' wx:for='{{lifeStyle}}' data-brf="{{item.brf}}"
+     data-text='{{item.txt}}' wx:key='{{index}}' bindtap='showLifeStyle'>
       <view class='life_icon'>{{item.type_text}}<image src='../../images/{{item.type}}.png'></image></view>
       <view>{{item.brf}}</view>
     </view>
